@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Dress the Character</title>
+  <title>Fashion Studio</title>
 
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -10,23 +10,79 @@
 
 <body>
 
-<div class="container">
+<div class="app">
 
-  <h1>Dress the Character</h1>
+  <!-- TOP -->
+  <div class="topbar">
+    <h1>Fashion Studio</h1>
+    <div class="cart">
+      🛍️ <span id="contador">0</span> | $<span id="total">0</span>
+    </div>
+  </div>
 
   <!-- PERSONAJE -->
-  <img id="personaje" src="https://i.pinimg.com/564x/8d/2e/4c/8d2e4c.jpg">
+  <div class="viewer">
+    <img id="personaje" src="https://i.pinimg.com/1200x/ba/1a/67/ba1a67cd4f68d7194dd520b547dd1b30.jpg">
+  </div>
 
-  <!-- CONTROLES -->
-  <div class="controles">
+  <!-- BOTONES NEXT -->
+  <div class="nav">
+    <button onclick="anterior()">←</button>
+    <button onclick="siguiente()">→</button>
+  </div>
 
-    <h2>Outfits</h2>
+  <!-- TIENDA -->
+  <div class="shop">
 
-    <button onclick="cambiarOutfit(0)">Look 1</button>
-    <button onclick="cambiarOutfit(1)">Look 2</button>
-    <button onclick="cambiarOutfit(2)">Look 3</button>
+    <div class="item" onclick="seleccionar(this, 0)">
+      <img src="https://i.pinimg.com/1200x/ba/1a/67/ba1a67cd4f68d7194dd520b547dd1b30.jpg">
+      <p>Look 1</p>
+      <span>$120</span>
+      <button onclick="event.stopPropagation(); comprar(120)">Buy</button>
+    </div>
+
+    <div class="item" onclick="seleccionar(this, 1)">
+      <img src="https://i.pinimg.com/736x/f3/07/94/f307944066e8efd5e5dc81c8e490b53a.jpg">
+      <p>Look 2</p>
+      <span>$95</span>
+      <button onclick="event.stopPropagation(); comprar(95)">Buy</button>
+    </div>
+
+    <div class="item" onclick="seleccionar(this, 2)">
+      <img src="https://i.pinimg.com/736x/fe/dc/d7/fedcd7d68c8113ce33f66217a3fd10ce.jpg">
+      <p>Look 3</p>
+      <span>$150</span>
+      <button onclick="event.stopPropagation(); comprar(150)">Buy</button>
+    </div>
+
+    <!-- NUEVOS LOOKS (los que tenías) -->
+    <div class="item" onclick="seleccionar(this, 3)">
+      <img src="https://i.pinimg.com/736x/d1/4c/e3/d14ce31339a298fe2b7b148b49d917a6.jpg">
+      <p>Look 4</p>
+      <span>$80</span>
+      <button onclick="event.stopPropagation(); comprar(80)">Buy</button>
+    </div>
+
+    <div class="item" onclick="seleccionar(this, 4)">
+      <img src="https://i.pinimg.com/736x/5b/3f/a8/5b3fa8d9400c4d03c3a178e3a898ca29.jpg">
+      <p>Look 5</p>
+      <span>$110</span>
+      <button onclick="event.stopPropagation(); comprar(110)">Buy</button>
+    </div>
+
+    <div class="item" onclick="seleccionar(this, 5)">
+      <img src="https://i.pinimg.com/736x/4b/c0/8a/4bc08aa62175fe09c7aa89c0f091773e.jpg">
+      <p>Look 6</p>
+      <span>$130</span>
+      <button onclick="event.stopPropagation(); comprar(130)">Buy</button>
+    </div>
 
   </div>
+
+  <!-- FINALIZAR -->
+  <button class="checkout" onclick="finalizarCompra()">Finalizar compra</button>
+
+  <p id="mensaje"></p>
 
 </div>
 
